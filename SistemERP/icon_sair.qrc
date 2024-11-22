@@ -1,0 +1,5 @@
+<RCC>
+  <qresource prefix="iconSa">
+    <file>Img/sair.png</file>
+  </qresource>
+</RCC>

@@ -1,0 +1,5 @@
+<RCC>
+  <qresource prefix="iconConsu">
+    <file>Img/consultar.png</file>
+  </qresource>
+</RCC>

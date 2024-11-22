@@ -1,0 +1,5 @@
+<RCC>
+  <qresource prefix="iconPa">
+    <file>Img/contasPagar.png</file>
+  </qresource>
+</RCC>

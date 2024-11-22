@@ -1,0 +1,5 @@
+<RCC>
+  <qresource prefix="iconCa">
+    <file>Img/caixa.png</file>
+  </qresource>
+</RCC>
