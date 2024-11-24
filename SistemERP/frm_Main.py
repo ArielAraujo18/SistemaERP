@@ -1,6 +1,11 @@
 from PyQt5 import QtCore, QtGui, QtWidgets
 from PyQt5.QtGui import QIcon
+from frm_Cliente import Ui_frm_Cliente
+from PyQt5.QtWidgets import QApplication, QWidget, QFileDialog, QTableWidget, QTableWidgetItem
 
+
+##Tela cliente
+import frm_Cliente
 
 class Ui_frm_Main(object):
     def setupUi(self, frm_Main):
@@ -368,6 +373,12 @@ class Ui_frm_Main(object):
 
         self.retranslateUi(frm_Main)
         QtCore.QMetaObject.connectSlotsByName(frm_Main)
+        ##Funções do botão
+
+        self.btn_sair.clicked.connect(self.sairSistema)
+        self.btn_cliente.clicked.connect(self.telaCliente)
+        self.actionCliente.triggered.connect(self.telaCliente)
+
 
     def retranslateUi(self, frm_Main):
         _translate = QtCore.QCoreApplication.translate
@@ -381,7 +392,7 @@ class Ui_frm_Main(object):
         self.menuConsultas.setTitle(_translate("frm_Main", "Consultas"))
         self.menuVendas.setTitle(_translate("frm_Main", "Vendas"))
         self.menuConsumos.setTitle(_translate("frm_Main", "Consumos"))
-        self.actionCliente.setText(_translate("frm_Main", "Cliente"))
+        self.actionCliente.setText(_translate("frm_Main", "Cliente")) 
         self.actionFornecedor.setText(_translate("frm_Main", "Fornecedor"))
         self.actionUsu_rio_do_sistema.setText(_translate("frm_Main", "Usuário"))
         self.actionVenda.setText(_translate("frm_Main", "Venda"))
@@ -400,6 +411,15 @@ class Ui_frm_Main(object):
         self.actionResumido.setText(_translate("frm_Main", "Resumido"))
         self.actionGeral_3.setText(_translate("frm_Main", "Geral"))
         self.actionResumido_2.setText(_translate("frm_Main", "Resumido"))
+
+    def sairSistema(self):
+        sys.exit()    
+    def telaCliente(self):
+        self.frm_Main = QtWidgets.QMainWindow()
+        self.ui = Ui_frm_Cliente()
+        self.ui.setupUi(self.frm_Main)
+        self.frm_Main.show()   
+
 ##Imagens Sistema##
 import icon_bancos
 import icon_caixa

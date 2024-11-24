@@ -1,0 +1,5 @@
+<RCC>
+  <qresource prefix="iconCad">
+    <file>Img/cadastrar.png</file>
+  </qresource>
+</RCC>

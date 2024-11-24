@@ -129,7 +129,7 @@ QLineEdit:hover {
     font-size: 14px;
     font-weight: bold;
     padding: 10px 16px;
-    background-image: url(:/newPrefix/Img/cancelar.png);
+    background-image: url(:/iconCanc/Img/cancelar.png);
     background-repeat: no-repeat;
     background-position: center;
     padding-left: 40px;
@@ -171,7 +171,7 @@ QPushButton:pressed {
     font-size: 14px;
     font-weight: bold;
     padding: 10px 16px;
-    background-image:url(:/newPrefix/Img/cadastrar.png); 
+    background-image:url(:/iconCad/Img/cadastrar.png); 
     background-repeat: no-repeat;
     background-position: center;
     transition: all 0.3s ease;
@@ -250,7 +250,8 @@ QLineEdit:hover {
   </widget>
  </widget>
  <resources>
-  <include location="kk.qrc"/>
+  <include location="icon_cancelar.qrc"/>
+  <include location="icon_cadastrar.qrc"/>
  </resources>
  <connections/>
 </ui>

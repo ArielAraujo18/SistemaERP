@@ -1,11 +1,16 @@
 from PyQt5 import QtCore, QtGui, QtWidgets
 from PyQt5.QtGui import QIcon
- 
+from PyQt5.QtWidgets import QApplication, QWidget, QFileDialog, QTableWidget, QTableWidgetItem
+import traceback
+import mysql.connector
+import mysql
+import pandas as pd
+
 class Ui_frm_Cliente(object):
     def setupUi(self, frm_Cliente):
         frm_Cliente.setObjectName("frm_Cliente")
         frm_Cliente.resize(581, 592)
-        frm_Main.setFixedSize(581, 592)
+        frm_Cliente.setFixedSize(581, 592)
         frm_Cliente.setWindowIcon(QIcon("C:/Users/Ariel/PycharmProjects/Scripts/Sistema/Img/AvsB.ico"))
         frm_Cliente.setStyleSheet("QWidget {\n"
 "    background-color: #e8f5e9;\n"
@@ -358,7 +363,53 @@ class Ui_frm_Cliente(object):
         item = self.tbl_cliente.horizontalHeaderItem(3)
         item.setText(_translate("frm_Cliente", "Cidade"))
         self.lbl_nomeCliente.setText(_translate("frm_Cliente", "Nome do Cliente:"))
+
+        ##Botões sistema##
+        self.btn_voltar.clicked.connect(lambda: self.sairTela(frm_Cliente))
+        self.btn_filtro.clicked.connect(self.consultarGeral)
+
+        ##Funções sistema
+    def sairTela(self, formCliente):
+        formCliente.close()
+
+    def consultarGeral(self):
+        try:
+                mydb = mysql.connector.connect(
+                host = 'localhost',
+                user = 'root',
+                password = 'ARiel18',
+                database = 'python',
+                )
+                print('Conexão bem sucedida!')
+
+        except mysql.connector.Error as err:
+            print(f'Erro: {err}')
+        except Exception as e:
+            print(f"Erro inesperado: {e}")
+            traceback.print_exc()  # Exibe a pilha de erro completa
+        finally:
+            input("Pressione Enter para sair...")  # Aguarda o usuário para não fechar automaticamente
+
+        mycursor = mydb.cursor()
+        mycursor.execute('SELECT * FROM cliente')
+        myresult = mycursor.fetchall()
+        df = pd.DataFrame(myresult, columns= ['idCliente', 'Nome', 'Celular', 'Cidade'])
+        self.all_data = df
+
+        numRows = len(self.all_data.index)
+        self.tbl_cliente.setColumnCount(len(self.all_data.columns))
+        self.tbl_cliente.setRowCount(numRows)
+        self.tbl_cliente.setHorizontalHeaderLabels(self.all_data.columns)
         
+        for i in range(numRows):
+            for j in range(self.all_data.columns):
+                self.tbl_cliente.setItem(i, j, QTableWidget(str(self.all_data.iat[i,j])))
+
+        self.tbl_cliente.resizeColumnsToContents()
+        self.tbl_cliente.resizeRowsToContents()
+
+        mycursor.close()
+
 import icon_consultar
 import icon_adicionar
 import icon_alterar
