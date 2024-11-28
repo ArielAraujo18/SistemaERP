@@ -10,8 +10,6 @@ class Ui_frm_Cliente(object):
     def setupUi(self, frm_Cliente):
         frm_Cliente.setObjectName("frm_Cliente")
         frm_Cliente.resize(581, 592)
-        frm_Cliente.setFixedSize(581, 592)
-        frm_Cliente.setWindowIcon(QIcon("C:/Users/Ariel/PycharmProjects/Scripts/Sistema/Img/AvsB.ico"))
         frm_Cliente.setStyleSheet("QWidget {\n"
 "    background-color: #e8f5e9;\n"
 "}")
@@ -159,101 +157,6 @@ class Ui_frm_Cliente(object):
 "}")
         self.btn_excluir.setText("")
         self.btn_excluir.setObjectName("btn_excluir")
-        self.tbl_cliente = QtWidgets.QTableWidget(frm_Cliente)
-        self.tbl_cliente.setGeometry(QtCore.QRect(0, 150, 581, 341))
-        font = QtGui.QFont()
-        font.setPointSize(-1)
-        self.tbl_cliente.setFont(font)
-        self.tbl_cliente.setStyleSheet("QTableWidget, QTableView {\n"
-"    border: 1px solid #dcdcdc; \n"
-"    border-radius: 5px; \n"
-"    gridline-color: #dcdcdc; \n"
-"    background-color: #ffffff; \n"
-"    font-size: 14px; \n"
-"    color: #333333; \n"
-"}\n"
-"\n"
-"QHeaderView::section {\n"
-"    background-color: #f0f0f0; \n"
-"    color: #333333;\n"
-"    font-weight: bold; \n"
-"    border: 1px solid #dcdcdc; \n"
-"    padding: 4px; \n"
-"}\n"
-"\n"
-"QTableWidget::item:selected, QTableView::item:selected {\n"
-"    background-color: #b3d9ff; \n"
-"    color: #000000;\n"
-"}\n"
-"\n"
-"QTableCornerButton::section {\n"
-"    background-color: #f0f0f0; \n"
-"    border: 1px solid #dcdcdc;\n"
-"}\n"
-"\n"
-"QScrollBar:vertical {\n"
-"    background: #f0f0f0;\n"
-"    width: 12px; \n"
-"    margin: 2px 0 2px 0; \n"
-"    border: none; \n"
-"}\n"
-"\n"
-"QScrollBar::handle:vertical {\n"
-"    background: #b0bec5; \n"
-"    min-height: 20px; \n"
-"    border-radius: 6px; \n"
-"}\n"
-"\n"
-"QScrollBar::handle:vertical:hover {\n"
-"    background: #90a4ae; \n"
-"}\n"
-"\n"
-"QScrollBar::add-line:vertical, QScrollBar::sub-line:vertical {\n"
-"    background: none; \n"
-"    height: 0px; \n"
-"}\n"
-"\n"
-"QScrollBar::add-page:vertical, QScrollBar::sub-page:vertical {\n"
-"    background: none; \n"
-"}\n"
-"\n"
-"QScrollBar:horizontal {\n"
-"    background: #f0f0f0; \n"
-"    height: 12px; \n"
-"    margin: 0 2px 0 2px; \n"
-"    border: none;\n"
-"}\n"
-"\n"
-"QScrollBar::handle:horizontal {\n"
-"    background: #b0bec5;\n"
-"    min-width: 20px; \n"
-"    border-radius: 6px;\n"
-"}\n"
-"\n"
-"QScrollBar::handle:horizontal:hover {\n"
-"    background: #90a4ae; \n"
-"}\n"
-"\n"
-"QScrollBar::add-line:horizontal, QScrollBar::sub-line:horizontal {\n"
-"    background: none;\n"
-"    width: 0px;\n"
-"}\n"
-"\n"
-"QScrollBar::add-page:horizontal, QScrollBar::sub-page:horizontal {\n"
-"    background: none;\n"
-"}\n"
-"")
-        self.tbl_cliente.setObjectName("tbl_cliente")
-        self.tbl_cliente.setColumnCount(4)
-        self.tbl_cliente.setRowCount(0)
-        item = QtWidgets.QTableWidgetItem()
-        self.tbl_cliente.setHorizontalHeaderItem(0, item)
-        item = QtWidgets.QTableWidgetItem()
-        self.tbl_cliente.setHorizontalHeaderItem(1, item)
-        item = QtWidgets.QTableWidgetItem()
-        self.tbl_cliente.setHorizontalHeaderItem(2, item)
-        item = QtWidgets.QTableWidgetItem()
-        self.tbl_cliente.setHorizontalHeaderItem(3, item)
         self.btn_pesquisar = QtWidgets.QPushButton(frm_Cliente)
         self.btn_pesquisar.setGeometry(QtCore.QRect(530, 110, 21, 21))
         self.btn_pesquisar.setStyleSheet("QPushButton {\n"
@@ -347,68 +250,162 @@ class Ui_frm_Cliente(object):
 "}")
         self.btn_filtro.setText("")
         self.btn_filtro.setObjectName("btn_filtro")
+        self.tableWidget = QtWidgets.QTableWidget(frm_Cliente)
+        self.tableWidget.setGeometry(QtCore.QRect(0, 170, 581, 321))
+        self.tableWidget.setStyleSheet("QTableWidget, QTableView {\n"
+"    border: 1px solid #dcdcdc; \n"
+"    border-radius: 5px; \n"
+"    gridline-color: #dcdcdc; \n"
+"    background-color: #ffffff; \n"
+"    font-size: 14px; \n"
+"    color: #333333; \n"
+"}\n"
+"\n"
+"QHeaderView::section {\n"
+"    background-color: #f0f0f0; \n"
+"    color: #333333;\n"
+"    font-weight: bold; \n"
+"    border: 1px solid #dcdcdc; \n"
+"    padding: 4px; \n"
+"}\n"
+"\n"
+"QTableWidget::item:selected, QTableView::item:selected {\n"
+"    background-color: #b3d9ff; \n"
+"    color: #000000;\n"
+"}\n"
+"\n"
+"QTableCornerButton::section {\n"
+"    background-color: #f0f0f0; \n"
+"    border: 1px solid #dcdcdc;\n"
+"}\n"
+"\n"
+"QScrollBar:vertical {\n"
+"    background: #f0f0f0;\n"
+"    width: 12px; \n"
+"    margin: 2px 0 2px 0; \n"
+"    border: none; \n"
+"}\n"
+"\n"
+"QScrollBar::handle:vertical {\n"
+"    background: #b0bec5; \n"
+"    min-height: 20px; \n"
+"    border-radius: 6px; \n"
+"}\n"
+"\n"
+"QScrollBar::handle:vertical:hover {\n"
+"    background: #90a4ae; \n"
+"}\n"
+"\n"
+"QScrollBar::add-line:vertical, QScrollBar::sub-line:vertical {\n"
+"    background: none; \n"
+"    height: 0px; \n"
+"}\n"
+"\n"
+"QScrollBar::add-page:vertical, QScrollBar::sub-page:vertical {\n"
+"    background: none; \n"
+"}\n"
+"\n"
+"QScrollBar:horizontal {\n"
+"    background: #f0f0f0; \n"
+"    height: 12px; \n"
+"    margin: 0 2px 0 2px; \n"
+"    border: none;\n"
+"}\n"
+"\n"
+"QScrollBar::handle:horizontal {\n"
+"    background: #b0bec5;\n"
+"    min-width: 20px; \n"
+"    border-radius: 6px;\n"
+"}\n"
+"\n"
+"QScrollBar::handle:horizontal:hover {\n"
+"    background: #90a4ae; \n"
+"}\n"
+"\n"
+"QScrollBar::add-line:horizontal, QScrollBar::sub-line:horizontal {\n"
+"    background: none;\n"
+"    width: 0px;\n"
+"}\n"
+"\n"
+"QScrollBar::add-page:horizontal, QScrollBar::sub-page:horizontal {\n"
+"    background: none;\n"
+"}\n"
+"")
+        self.tableWidget.setObjectName("tableWidget")
+        self.tableWidget.setColumnCount(4)
+        self.tableWidget.setRowCount(0)
+        item = QtWidgets.QTableWidgetItem()
+        self.tableWidget.setHorizontalHeaderItem(0, item)
+        item = QtWidgets.QTableWidgetItem()
+        self.tableWidget.setHorizontalHeaderItem(1, item)
+        item = QtWidgets.QTableWidgetItem()
+        self.tableWidget.setHorizontalHeaderItem(2, item)
+        item = QtWidgets.QTableWidgetItem()
+        self.tableWidget.setHorizontalHeaderItem(3, item)
 
         self.retranslateUi(frm_Cliente)
         QtCore.QMetaObject.connectSlotsByName(frm_Cliente)
 
     def retranslateUi(self, frm_Cliente):
         _translate = QtCore.QCoreApplication.translate
-        frm_Cliente.setWindowTitle(_translate("frm_Cliente", "Clientes"))
-        item = self.tbl_cliente.horizontalHeaderItem(0)
-        item.setText(_translate("frm_Cliente", "ID"))
-        item = self.tbl_cliente.horizontalHeaderItem(1)
-        item.setText(_translate("frm_Cliente", "Nome"))
-        item = self.tbl_cliente.horizontalHeaderItem(2)
-        item.setText(_translate("frm_Cliente", "Celular"))
-        item = self.tbl_cliente.horizontalHeaderItem(3)
-        item.setText(_translate("frm_Cliente", "Cidade"))
+        frm_Cliente.setWindowTitle(_translate("frm_Cliente", "Form"))
         self.lbl_nomeCliente.setText(_translate("frm_Cliente", "Nome do Cliente:"))
+        item = self.tableWidget.horizontalHeaderItem(0)
+        item.setText(_translate("frm_Cliente", "idCliente"))
+        item = self.tableWidget.horizontalHeaderItem(1)
+        item.setText(_translate("frm_Cliente", "Nome"))
+        item = self.tableWidget.horizontalHeaderItem(2)
+        item.setText(_translate("frm_Cliente", "Celular"))
+        item = self.tableWidget.horizontalHeaderItem(3)
+        item.setText(_translate("frm_Cliente", "Cidade"))
 
-        ##Botões sistema##
-        self.btn_voltar.clicked.connect(lambda: self.sairTela(frm_Cliente))
-        self.btn_filtro.clicked.connect(self.consultarGeral)
+        self.btn_consul.clicked.connect(self.consultarGeral)
+        
 
-        ##Funções sistema
-    def sairTela(self, formCliente):
-        formCliente.close()
 
     def consultarGeral(self):
         try:
+                print('Conectando...')
                 mydb = mysql.connector.connect(
-                host = 'localhost',
-                user = 'root',
-                password = 'ARiel18',
-                database = 'python',
+                host='127.0.0.1',
+                user='Ariel',
+                password='IRani18@#',
+                database='sistema'
                 )
-                print('Conexão bem sucedida!')
+                print('Conexão bem-sucedida!')
 
-        except mysql.connector.Error as err:
-            print(f'Erro: {err}')
-        except Exception as e:
-            print(f"Erro inesperado: {e}")
-            traceback.print_exc()  # Exibe a pilha de erro completa
-        finally:
-            input("Pressione Enter para sair...")  # Aguarda o usuário para não fechar automaticamente
+                mycursor = mydb.cursor()
+                mycursor.execute('SELECT * FROM cliente')
+                myresult = mycursor.fetchall()
 
-        mycursor = mydb.cursor()
-        mycursor.execute('SELECT * FROM cliente')
-        myresult = mycursor.fetchall()
-        df = pd.DataFrame(myresult, columns= ['idCliente', 'Nome', 'Celular', 'Cidade'])
-        self.all_data = df
+                # Criando DataFrame
+                df = pd.DataFrame(myresult, columns=["idCliente", "Nome", "Celular", "Cidade"])
+                self.all_data = df
 
-        numRows = len(self.all_data.index)
-        self.tbl_cliente.setColumnCount(len(self.all_data.columns))
-        self.tbl_cliente.setRowCount(numRows)
-        self.tbl_cliente.setHorizontalHeaderLabels(self.all_data.columns)
+                # Configurando a tabela no PyQt
+                numRows = len(self.all_data.index)
+                numCols = len(self.all_data.columns)
+                self.tableWidget.setColumnCount(numCols)
+                self.tableWidget.setRowCount(numRows)
+                self.tableWidget.setHorizontalHeaderLabels(self.all_data.columns)
+
+                # Preenchendo a tabela
+                for i in range(numRows):
+                        for j in range(numCols):
+                                self.tableWidget.setItem(i, j, QTableWidgetItem(str(self.all_data.iat[i, j])))
+
+                # Ajustando o layout das colunas e linhas
+                self.tableWidget.resizeColumnsToContents()
+                self.tableWidget.resizeRowsToContents()
+
+                mycursor.close()
         
-        for i in range(numRows):
-            for j in range(self.all_data.columns):
-                self.tbl_cliente.setItem(i, j, QTableWidget(str(self.all_data.iat[i,j])))
+        except mysql.connector.Error as err:
+                print(f"Erro de conexão com o banco de dados: {err}")
+        
+        except Exception as e:
+                print(f"Ocorreu um erro: {e}")
 
-        self.tbl_cliente.resizeColumnsToContents()
-        self.tbl_cliente.resizeRowsToContents()
-
-        mycursor.close()
 
 import icon_consultar
 import icon_adicionar
@@ -421,8 +418,8 @@ import icon_retornar
 if __name__ == "__main__":
     import sys
     app = QtWidgets.QApplication(sys.argv)
-    frm_Main = QtWidgets.QMainWindow()
+    frm_cliente = QtWidgets.QMainWindow()
     ui = Ui_frm_Cliente()
-    ui.setupUi(frm_Main)
-    frm_Main.show()
+    ui.setupUi(frm_cliente)
+    frm_cliente.show()
     sys.exit(app.exec_())
